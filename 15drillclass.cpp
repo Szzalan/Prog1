@@ -3,18 +3,18 @@
 using namespace std;
 struct Person
 {
-	string name;
-	int age;
+	void People(string name,int age){
+	cout << "Adja meg az ember nevét" << endl;
+	cin >> name;
+	cout << "adja meg az ember életkorát" << endl;
+	cin >> age;}
 
 
 };
 int main()
 {
 	Person obj1;
-	obj1.name = "Goofy";
-	obj1.age = 63;
-	cout << obj1.name << endl;	
-
+	cout << obj1.People << endl;
 
 
 
