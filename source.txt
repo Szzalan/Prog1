@@ -1,0 +1,10 @@
+1 Mustang 998
+2 Ford 14
+3 Chevrolet 57
+4 Trabant 420
+5 Lada 558
+6 Wartburg 234
+7 Porsche 340
+8 Csepel 234
+9 Pannonia 69
+10 Ikarusz 45
