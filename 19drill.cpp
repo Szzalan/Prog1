@@ -5,25 +5,25 @@ struct S {
     private:
         T val;
     public:
-        S(T vall2 = T()) : val(vall2) {}
+        S(T vall2) : val(vall2) {} //T típusú val-ba belerakjuk a vall2-t
     
         T& get();
-        T get() const { return val; }
+        T get() const { return val; } 
 
         T operator=(const T&);
 };
 
-template<typename T> T& S<T>::get() { return val; }
+template<typename T> T& S<T>::get() { return val; }  //getter függvény
 
-template<typename T> T S<T>::operator=(const T& nval) { val = nval; } 
+template<typename T> T S<T>::operator=(const T& nval) { val = nval; } // = operátor túlterhelés
 
 template<typename T>
-istream& operator>>(istream& is, S<T>& tt){
+istream& operator>>(istream& is, S<T>& tt){ //>> operátor túlterhelés
     is >> tt.get();
     return is;
 }
 
-template<typename T> void read_val(T& v) { cin >> v; }
+template<typename T> void read_val(T& v) { cin >> v; } //beolvasás függvénnyel
 
 int main()
 try {
@@ -43,10 +43,10 @@ try {
     num = num2; 
     cout << "New num: " << num.get() << endl;
 
-    S<int> numin;
-    S<double> dnumin;
-    S<string> stringin;
-    S<char> chin;
+    S<int> numin{0};
+    S<double> dnumin{0};
+    S<string> stringin{"asd"};
+    S<char> chin{'a'};
     cout << "Type in a number, a double number, a string and a char!" << endl;
     read_val(numin); read_val(dnumin); read_val(stringin); read_val(chin);
     cout << "Number: "<< numin.get() << "\n" << "Double number: " << dnumin.get() << "\n" << 
