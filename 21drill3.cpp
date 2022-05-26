@@ -1,9 +1,9 @@
 #include "std_lib_facilities.h"
-void read_from_file(vector<double>& vd, string file)
+void read_from_file(vector<double>& vd, string file) //beolvasás vektorba filebol
 {
     ifstream ifs(file);
 
-    for(double d; ifs >> d;)
+    for(double d; ifs >> d;) //feltöltés ifs ből d-be
         vd.push_back(d);
 }
 
@@ -11,13 +11,13 @@ class Less_than
 {
     double v;
 public:
-    Less_than(double d) : v{d} {}
+    Less_than(double d) : v{d} {} //belerakjuk egy változóba
 
-    bool operator()(double val){return val < v;}
+    bool operator()(double val){return val < v;} //összehasonlítás
 };
 
 template<typename T>
-void v_print(const vector<T>& vec)
+void v_print(const vector<T>& vec) //vektor kiíratás
 {
     for(double val : vec)
         cout << val << endl;
