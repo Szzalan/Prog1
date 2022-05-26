@@ -2,26 +2,26 @@
 #include <map>
 #include <numeric>
 
-template<typename T, typename Z>
+template<typename T, typename Z> //generikus
 void m_print(const map<T,Z>& m)
 {
     cout << "Map: " << endl;
 
     for (const auto& a : m)
-        cout << a.first << " > " << a.second << endl;
+        cout << a.first << " > " << a.second << endl; //kiíratás első érték,második
 
     cout << endl;
 }
-istream& operator>>(istream& is, map<string,int>& m)
+istream& operator>>(istream& is, map<string,int>& m) // >> operátor túlterhelés
 {
     string key;
     int value;
 
     is >> key >> value;
-    m.insert(make_pair(key, value));
+    m.insert(make_pair(key, value)); //párosítás
     return is;
 }
-void read_to_map(map<string,int>& m, int num)
+void read_to_map(map<string,int>& m, int num) //beolvasás
 {
     while(m.size() < num)
         cin >> m;
@@ -29,7 +29,7 @@ void read_to_map(map<string,int>& m, int num)
 
 int main(){
 //1,2
-    map<string,int> msi;
+    map<string,int> msi; //map (kulcs)(érték) map (string int)
     msi["Toyota"] = 1;
     msi["Mitsubishi"] = 2;
     msi["Subaru"] = 3;
