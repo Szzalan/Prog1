@@ -4,12 +4,12 @@ using namespace std;
 class BV
 {
 public:
-	virtual void pvf() = 0;
+	virtual void pvf() = 0; // alapból  0 értéket kap ezzel jelezzük hogy a gyermekosztályban felül lesz írva,absztrakt osztály lesz,nem példányosítható
 };
 class B1 : public BV
 {
 public:
-	virtual void vf()
+	virtual void vf() //felül lehet írni a gyermekosztályban
 	{
 		cout << "B1::vf" << endl;
 	}
@@ -17,12 +17,12 @@ public:
 	{
 		cout << "B1::f" << endl;
 	}
-	void pvf() override
+	void pvf() override //ellenőrzés, van e már pvf?(virtual kulcsszó)
 	{
 		cout << "B1::pvf" << endl;
 	};
 };
-class D1 : public B1
+class D1 : public B1 // B1 ősosztály függvényeit írjuk felül,public az összes láthatóság ugyanaz marad
 {
 	public:
 		void vf() override
